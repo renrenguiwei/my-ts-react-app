@@ -1,6 +1,8 @@
-import './App.css'
+import './asset/styles.less'
 import React from 'react'
 import storage from './utils/storage'
+
+import Lime from './asset/imgs/leimu.jpg'
 
 function App() {
   const get = () => {
@@ -27,6 +29,7 @@ function App() {
       <button onClick={() => set()}>设置</button>
       <button onClick={() => remove()}>删除</button>
       <button onClick={() => clear()}>清空</button>
+      <div className="girlsIcon" style={{backgroundImage: `url(${Lime})`}}>雷姆</div>
     </div>
   )
 }
