@@ -1,5 +1,5 @@
 import React from 'react'
-import storage from '../../utils/storage'
+import storage from '@/utils/storage'
 
 const Index = () => {
   const get = () => {
