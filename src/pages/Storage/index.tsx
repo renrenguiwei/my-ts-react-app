@@ -1,5 +1,6 @@
 import React from 'react'
 import storage from '@/utils/storage'
+import { Button } from 'antd-mobile'
 
 const Index = () => {
   const get = () => {
@@ -22,10 +23,10 @@ const Index = () => {
 
   return (
     <>
-      <button onClick={() => get()}>读取</button>
-      <button onClick={() => set()}>设置</button>
-      <button onClick={() => remove()}>删除</button>
-      <button onClick={() => clear()}>清空</button>
+      <Button onClick={() => get()}>读取</Button>
+      <Button onClick={() => set()}>设置</Button>
+      <Button onClick={() => remove()}>删除</Button>
+      <Button onClick={() => clear()}>清空</Button>
     </>
   )
 }

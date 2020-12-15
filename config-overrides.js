@@ -19,11 +19,12 @@ module.exports = override(
     '@': path.resolve(__dirname, 'src')
   }),
   addDecoratorsLegacy(),
-  // REM配置
+  // antd-mobile集成
   fixBabelImports('import', {
     libraryName: 'antd-mobile',
     style: 'css'
   }),
+  // REM配置
   addPostcssPlugins([
     require('postcss-pxtorem')({
       rootValue: 37.5,
