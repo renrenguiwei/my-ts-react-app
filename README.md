@@ -18,7 +18,7 @@ yarn add @babel/plugin-proposal-decorators
 
 > `yarn Build` 后利用 根目录.env，控制Pro环境 sourceMap `GENERATE_SOURCEMAP=false`
 9. [利用 craco 非react-app-rewrired 配置 sourcemap，未验证](https://github.com/facebook/create-react-app/issues/5707)
-
+10. [antd-moblie集成](https://mobile.ant.design/docs/react/use-with-create-react-app-cn)
 
 ### 注意事项
 
@@ -38,5 +38,5 @@ yarn add @babel/plugin-proposal-decorators
 - [x] 7.配置@src绝对文件路径
 - [x] 8.webstorm 换行对齐
 - [x] 9.添加 sourceMap 在development、production模式
-- [ ] 10.集成ant-design
+- [x] 10.集成ant-design
 
