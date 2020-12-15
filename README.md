@@ -9,8 +9,8 @@
 yarn add @babel/plugin-proposal-decorators
 ```
 6. [react通过state的数据显示style多个样式（三目运算）](https://blog.csdn.net/chensong8331/article/details/102938954)
+7. [create-react-app 安装postcss-pxtorem的方法](https://blog.csdn.net/quhongqiang/article/details/95043246)
 ### 注意事项
-
 
 
 
@@ -18,12 +18,12 @@ yarn add @babel/plugin-proposal-decorators
 ### TODO
 - [ ] 1.yarn eject 配置 less 为何不成功？
 - [ ] 2.非yarn eject 下 less-loader在5.0以上版本配置为何不成功？
-- [ ] 3.react的background-image引入不成功，非行内样式下： 
+- [x] 3.react的background-image引入不成功，非行内样式下： 
     - [x] a. https链接引入
     - [x] b. css文件引入
     - [ ] c. webpack build后路径引入问题
 - [ ] 4.尝试自己配置CRA脚手架
-- [ ] 5.REM布局
+- [x] 5.REM布局
 - [x] 6.prettier样式配置
 - [x] 7.配置@src绝对文件路径
 - [x] 8.webstorm换行对齐
