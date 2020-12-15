@@ -1,35 +1,21 @@
-import './asset/styles.less'
 import React from 'react'
-import storage from './utils/storage'
 
+// component
+import StorgePage from './pages/Storage'
+
+// styles
+import './asset/styles.less'
+
+// asset
 import Leimu from './asset/imgs/leimu.jpg'
 
 function App() {
-  const get = () => {
-    const name = storage.getItem('name')
-    console.log(name)
-  }
-  const set = () => {
-    storage.setItem({
-      name: 'name',
-      value: 'claus wong',
-      expires: '3000'
-    })
-  }
-  const remove = () => {
-    storage.removeItem('name')
-  }
-  const clear = () => {
-    storage.clear()
-  }
-
   return (
     <div className="App">
-      <button onClick={() => get()}>读取</button>
-      <button onClick={() => set()}>设置</button>
-      <button onClick={() => remove()}>删除</button>
-      <button onClick={() => clear()}>清空</button>
-      <div className="girlsIcon" style={{backgroundImage: `url(${Leimu})`}}></div>
+      <StorgePage />
+      <div className="girlsIcon" style={{ backgroundImage: `url(${Leimu})` }}>
+        12
+      </div>
     </div>
   )
 }
