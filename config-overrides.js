@@ -9,6 +9,7 @@ const {
 const path = require('path')
 
 module.exports = override(
+  // less配置
   addLessLoader({
     javascriptEnabled: true,
     ModifyVars: { '@primary-color': '#1DA57A' },
@@ -27,7 +28,7 @@ module.exports = override(
   // REM配置
   addPostcssPlugins([
     require('postcss-pxtorem')({
-      rootValue: 37.5,
+      rootValue: 14,
       propList: ['*']
       // propList: ['*', '!border*', '!font-size*', '!letter-spacing'],
       // propWhiteList: []

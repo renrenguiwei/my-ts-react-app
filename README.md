@@ -17,8 +17,9 @@ yarn add @babel/plugin-proposal-decorators
 > 开启 chrome-inspect-Setting-Sources-Enable Javascript source maps
 
 > `yarn Build` 后利用 根目录.env，控制Pro环境 sourceMap `GENERATE_SOURCEMAP=false`
-9. [利用 craco 非react-app-rewrired 配置 sourcemap，未验证](https://github.com/facebook/create-react-app/issues/5707)
+9. [利用 craco 非react-app-rewrired 配置 sourcemap，未验证](https://github.com/facebook/create-react-app/issues/5707#issuecomment-503614767)
 10. [antd-moblie集成](https://mobile.ant.design/docs/react/use-with-create-react-app-cn)
+11. [React默认脚手架新增Less支持](https://www.cnblogs.com/hunanzp/p/13179549.html)
 
 ### 注意事项
 
