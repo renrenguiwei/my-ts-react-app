@@ -7,7 +7,8 @@ import React from 'react'
 // import ReactRef from '@/pages/ReactRef'
 // import Context from '@/pages/Context'
 // import Suspense from '@/pages/Suspense'
-import Hooks from '@/pages/Hooks'
+// import Hooks from '@/pages/Hooks'
+import ReactChildren from '@/pages/ReactChildren'
 
 // styles
 import '@/asset/styles.less'
@@ -30,7 +31,8 @@ function App() {
       {/*</div>*/}
       {/*<Context />*/}
       {/*<Suspense />*/}
-      <Hooks />
+      {/*<Hooks />*/}
+      <ReactChildren />
     </div>
   )
 }
