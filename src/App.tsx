@@ -6,6 +6,7 @@ import ReactNotUpdate from '@/pages/ReactNotUpdate'
 import CreateElement from '@/pages/CreateElement'
 import ReactRef from '@/pages/ReactRef'
 import Context from '@/pages/Context'
+import Suspense from '@/pages/Suspense'
 
 // styles
 import '@/asset/styles.less'
@@ -26,7 +27,8 @@ function App() {
       {/*<div className="girlsIcon" style={{ backgroundImage: `url(${Leimu})` }}>*/}
       {/*  12*/}
       {/*</div>*/}
-      <Context />
+      {/*<Context />*/}
+      <Suspense />
     </div>
   )
 }
