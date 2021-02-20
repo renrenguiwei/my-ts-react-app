@@ -3,7 +3,7 @@ import React from 'react'
 export default () => {
   return (
     <ChildrenElem a={1}>
-      <div className={'2'}>1</div>
+      <div className={'2'}>12</div>
     </ChildrenElem>
   )
 }
