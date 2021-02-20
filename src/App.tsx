@@ -16,7 +16,7 @@ function App() {
       <StorgePage />
       <ReactNotUpdate />
       <div className="girlsIcon" style={{ backgroundImage: `url(${Leimu})` }}>
-        12
+        123
       </div>
     </div>
   )
