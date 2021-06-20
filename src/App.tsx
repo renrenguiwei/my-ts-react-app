@@ -4,6 +4,7 @@ import React from 'react'
 import StorgePage from '@/pages/Storage'
 import ReactNotUpdate from '@/pages/ReactNotUpdate'
 import useWindowSize from '@/pages/WindowResize'
+import HooksSample from '@/pages/HooksSample'
 
 // styles
 import '@/asset/styles.less'
@@ -21,6 +22,7 @@ function App() {
         123
       </div>
       {size === 'large' ? '变大大大大' : '变小小小小'}
+      <HooksSample />
     </div>
   )
 }
