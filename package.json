@@ -10,6 +10,8 @@
     "@types/react": "^17.0.0",
     "@typescript-eslint/parser": "^4.9.1",
     "antd-mobile": "^2.3.4",
+    "mobx": "^6.3.2",
+    "mobx-react": "^7.2.0",
     "postcss-pxtorem": "^5.1.1",
     "prettier": "^2.2.1",
     "react": "^17.0.1",
