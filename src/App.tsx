@@ -3,6 +3,9 @@ import React from 'react'
 // component
 import StorgePage from '@/pages/Storage'
 import ReactNotUpdate from '@/pages/ReactNotUpdate'
+import useWindowSize from '@/pages/UseWindowSize'
+import HooksSample from '@/pages/HooksSample'
+import HooksSample2 from '@/pages/HooksSample/index2'
 
 // styles
 import '@/asset/styles.less'
@@ -11,6 +14,7 @@ import '@/asset/styles.less'
 import Leimu from '@/asset/imgs/leimu.jpg'
 
 function App() {
+  const size = useWindowSize()
   return (
     <div className="App">
       <StorgePage />
@@ -18,6 +22,9 @@ function App() {
       <div className="girlsIcon" style={{ backgroundImage: `url(${Leimu})` }}>
         1234
       </div>
+      {size === 'large' ? '变大大大大' : '变小小小小'}
+      <HooksSample />
+      <HooksSample2 />
     </div>
   )
 }
