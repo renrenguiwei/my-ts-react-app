@@ -41,3 +41,6 @@ yarn add @babel/plugin-proposal-decorators
 - [x] 9.添加 sourceMap 在development、production模式
 - [x] 10.集成ant-design
 
+### 好文思考
+1. [React Hooks 还不如类？
+   ](https://www.infoq.cn/article/ltgmCtDsuts31qM1W20D)
