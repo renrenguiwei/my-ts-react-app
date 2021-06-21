@@ -6,6 +6,7 @@ import ReactNotUpdate from '@/pages/ReactNotUpdate'
 import useWindowSize from '@/pages/UseWindowSize'
 import HooksSample from '@/pages/HooksSample'
 import HooksSample2 from '@/pages/HooksSample/index2'
+import Counter from '@/pages/HooksSample/useCallback'
 
 // styles
 import '@/asset/styles.less'
@@ -14,17 +15,18 @@ import '@/asset/styles.less'
 import Leimu from '@/asset/imgs/leimu.jpg'
 
 function App() {
-  const size = useWindowSize()
+  // const size = useWindowSize()
   return (
     <div className="App">
-      <StorgePage />
-      <ReactNotUpdate />
-      <div className="girlsIcon" style={{ backgroundImage: `url(${Leimu})` }}>
-        1234
-      </div>
-      {size === 'large' ? '变大大大大' : '变小小小小'}
-      <HooksSample />
-      <HooksSample2 />
+      {/*<StorgePage />*/}
+      {/*<ReactNotUpdate />*/}
+      {/*<div className="girlsIcon" style={{ backgroundImage: `url(${Leimu})` }}>*/}
+      {/*  123*/}
+      {/*</div>*/}
+      {/*{size === 'large' ? '变大大大大' : '变小小小小'}*/}
+      {/*<HooksSample />*/}
+      {/*<HooksSample2 />*/}
+      <Counter />
     </div>
   )
 }
