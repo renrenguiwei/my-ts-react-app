@@ -10,7 +10,8 @@ import React from 'react'
 // import Counter2 from '@/pages/HooksSample/useCallback2'
 // import Counter3 from '@/pages/HooksSample/useCallback3'
 // import Counter4 from '@/pages/HooksSample/useMemo'
-import UseRef from '@/pages/HooksSample/useRef'
+// import UseRef from '@/pages/HooksSample/useRef'
+import UseContext from '@/pages/HooksSample/useContext'
 
 // styles
 import '@/asset/styles.less'
@@ -34,7 +35,7 @@ function App() {
       {/*<Counter2 />*/}
       {/*<Counter3 />*/}
       {/*<Counter4 />*/}
-      <UseRef />
+      <UseContext />
     </div>
   )
 }
