@@ -1,10 +1,10 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 
 function Counter() {
   const [count, setCount] = useState(0)
   const [words, setWords] = useState('')
-  // const handleIncrement = useCallback(() => setCount(count + 1), [count])
-  const handleIncrement = () => setCount(count + 1)
+  const handleIncrement = useCallback(() => setCount(count + 1), [])
+  // const handleIncrement = () => setCount(count + 1)
   // const sayWords = useCallback(() => setWords((words) => words + '1'), [words])
   return (
     <>
@@ -22,6 +22,9 @@ interface ButtonType {
 
 function Button(props: ButtonType) {
   const { onClick, children } = props
+  useEffect(() => {
+    onClick()
+  }, [onClick])
   console.log('Button Render', 1)
   return <button onClick={onClick}>{children}</button>
 }

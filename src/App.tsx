@@ -8,6 +8,7 @@ import HooksSample from '@/pages/HooksSample'
 import HooksSample2 from '@/pages/HooksSample/index2'
 import Counter from '@/pages/HooksSample/useCallback'
 import Counter2 from '@/pages/HooksSample/useCallback2'
+import Counter3 from '@/pages/HooksSample/useCallback3'
 
 // styles
 import '@/asset/styles.less'
@@ -29,6 +30,7 @@ function App() {
       {/*<HooksSample2 />*/}
       <Counter />
       <Counter2 />
+      <Counter3 />
     </div>
   )
 }
