@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback, useEffect } from 'react'
+import React, { useRef, useState, useCallback, useEffect, memo } from 'react'
 interface ChildProps {
   val: string
   getData: Function
@@ -16,37 +16,43 @@ let count = 0
 function App() {
   const [val, setVal] = useState('')
 
-  const getData = useRefCallback(() => {
+  // const getData = useRefCallback(() => {
+  //   setTimeout(() => {
+  //     setVal('new data ' + count)
+  //     count++
+  //   }, 500)
+  // }, [val])
+  const getData = useCallback(() => {
     setTimeout(() => {
       setVal('new data ' + count)
       count++
-    }, 500)
+    }, 1000)
   }, [val])
 
   return <Child val={val} getData={getData} />
 }
 
-function useRefCallback(fn:any, dependencies: any) {
-  const ref = useRef(fn);
+function useRefCallback(fn: any, dependencies: any) {
+  const ref = useRef(fn)
 
   // 每次调用的时候，fn 都是一个全新的函数，函数中的变量有自己的作用域
   // 当依赖改变的时候，传入的 fn 中的依赖值也会更新，这时更新 ref 的指向为新传入的 fn
   useEffect(() => {
-    ref.current = fn;
-  }, [fn, ...dependencies]);
+    ref.current = fn
+  }, [fn, ...dependencies])
 
   return useCallback(() => {
-    const fn = ref.current;
-    return fn();
-  }, [ref]);
+    const fn = ref.current
+    return fn()
+  }, [ref])
 }
 
-function Child(props: ChildProps) {
+const Child = memo((props: ChildProps) => {
   const { val, getData } = props
   useEffect(() => {
     getData()
   }, [getData])
   return <div>{val}</div>
-}
+})
 
 export default App

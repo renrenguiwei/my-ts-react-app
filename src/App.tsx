@@ -7,10 +7,10 @@ import React from 'react'
 // import HooksSample from '@/pages/HooksSample'
 // import HooksSample2 from '@/pages/HooksSample/index2'
 // import Counter from '@/pages/HooksSample/useCallback'
-// import Counter2 from '@/pages/HooksSample/useCallback2'
+import Counter2 from '@/pages/HooksSample/useCallback2'
 // import Counter3 from '@/pages/HooksSample/useCallback3'
 // import Counter4 from '@/pages/HooksSample/useMemo'
-// import UseRef from '@/pages/HooksSample/useRef'
+import UseRef from '@/pages/HooksSample/useRef'
 import UseContext from '@/pages/HooksSample/useContext'
 
 // styles
@@ -32,10 +32,10 @@ function App() {
       {/*<HooksSample />*/}
       {/*<HooksSample2 />*/}
       {/*<Counter />*/}
-      {/*<Counter2 />*/}
+      <Counter2 />
       {/*<Counter3 />*/}
       {/*<Counter4 />*/}
-      <UseContext />
+      {/*<UseContext />*/}
     </div>
   )
 }
