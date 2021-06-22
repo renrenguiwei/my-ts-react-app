@@ -18,8 +18,8 @@ function App() {
   return (
     <>
       <div>{time} / 时间</div>
-      <button onClick={handleStart}>Start</button>
-      <button onClick={handlePause}>Pause</button>
+      <button onClick={() => !timer.current && handleStart()}>Start</button>
+      <button onClick={() => timer.current && handlePause()}>Pause</button>
     </>
   )
 }
