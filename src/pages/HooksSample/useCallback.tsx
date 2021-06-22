@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react'
 
 function Counter() {
   const [count, setCount] = useState(0)
-  const [words, setWords] = useState('')
+  // const [words, setWords] = useState('')
   const handleIncrement = useCallback(() => setCount(count + 1), [])
   // const handleIncrement = () => setCount(count + 1)
   // const sayWords = useCallback(() => setWords((words) => words + '1'), [words])
