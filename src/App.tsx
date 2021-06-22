@@ -9,6 +9,7 @@ import HooksSample2 from '@/pages/HooksSample/index2'
 import Counter from '@/pages/HooksSample/useCallback'
 import Counter2 from '@/pages/HooksSample/useCallback2'
 import Counter3 from '@/pages/HooksSample/useCallback3'
+import Counter4 from '@/pages/HooksSample/useMemo'
 
 // styles
 import '@/asset/styles.less'
@@ -28,9 +29,10 @@ function App() {
       {/*{size === 'large' ? '变大大大大' : '变小小小小'}*/}
       {/*<HooksSample />*/}
       {/*<HooksSample2 />*/}
-      <Counter />
-      <Counter2 />
-      <Counter3 />
+      {/*<Counter />*/}
+      {/*<Counter2 />*/}
+      {/*<Counter3 />*/}
+      <Counter4 />
     </div>
   )
 }
