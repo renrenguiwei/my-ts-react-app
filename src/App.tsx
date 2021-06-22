@@ -1,21 +1,22 @@
 import React from 'react'
 
 // component
-import StorgePage from '@/pages/Storage'
-import ReactNotUpdate from '@/pages/ReactNotUpdate'
-import useWindowSize from '@/pages/UseWindowSize'
-import HooksSample from '@/pages/HooksSample'
-import HooksSample2 from '@/pages/HooksSample/index2'
-import Counter from '@/pages/HooksSample/useCallback'
-import Counter2 from '@/pages/HooksSample/useCallback2'
-import Counter3 from '@/pages/HooksSample/useCallback3'
-import Counter4 from '@/pages/HooksSample/useMemo'
+// import StorgePage from '@/pages/Storage'
+// import ReactNotUpdate from '@/pages/ReactNotUpdate'
+// import useWindowSize from '@/pages/UseWindowSize'
+// import HooksSample from '@/pages/HooksSample'
+// import HooksSample2 from '@/pages/HooksSample/index2'
+// import Counter from '@/pages/HooksSample/useCallback'
+// import Counter2 from '@/pages/HooksSample/useCallback2'
+// import Counter3 from '@/pages/HooksSample/useCallback3'
+// import Counter4 from '@/pages/HooksSample/useMemo'
+import UseRef from '@/pages/HooksSample/useRef'
 
 // styles
 import '@/asset/styles.less'
 
 // asset
-import Leimu from '@/asset/imgs/leimu.jpg'
+// import Leimu from '@/asset/imgs/leimu.jpg'
 
 function App() {
   // const size = useWindowSize()
@@ -32,7 +33,8 @@ function App() {
       {/*<Counter />*/}
       {/*<Counter2 />*/}
       {/*<Counter3 />*/}
-      <Counter4 />
+      {/*<Counter4 />*/}
+      <UseRef />
     </div>
   )
 }
