@@ -7,6 +7,7 @@ import useWindowSize from '@/pages/UseWindowSize'
 import HooksSample from '@/pages/HooksSample'
 import HooksSample2 from '@/pages/HooksSample/index2'
 import Counter from '@/pages/HooksSample/useCallback'
+import Counter2 from '@/pages/HooksSample/useCallback2'
 
 // styles
 import '@/asset/styles.less'
@@ -27,6 +28,7 @@ function App() {
       {/*<HooksSample />*/}
       {/*<HooksSample2 />*/}
       <Counter />
+      <Counter2 />
     </div>
   )
 }
