@@ -13,6 +13,7 @@ import useCallback3 from '@/pages/HooksSample/useCallback3'
 import useMemo from '@/pages/HooksSample/useMemo'
 // import UseRef from '@/pages/HooksSample/useRef'
 // import UseContext from '@/pages/HooksSample/useContext'
+import UseScroll from '@/pages/HooksDiy/useScroll'
 
 // styles
 import '@/asset/styles.less'
@@ -23,7 +24,7 @@ import '@/asset/styles.less'
 function App() {
   // const size = useWindowSize()
   return (
-    <div className="App">
+    <div className="App" style={{ height: '10000px' }}>
       {/*<StorgePage />*/}
       {/*<ReactNotUpdate />*/}
       {/*<div className="girlsIcon" style={{ backgroundImage: `url(${Leimu})` }}>*/}
@@ -37,10 +38,11 @@ function App() {
       {/*<Counter3 />*/}
       {/*<UseRef />*/}
       {/*<UseContext />*/}
-      <HashRouter>
-        <Route exact path="/" component={useCallback3} />
-        <Route exact path="/useMemo" component={useMemo} />
-      </HashRouter>
+      {/*<HashRouter>*/}
+      {/*  <Route exact path="/" component={useCallback3} />*/}
+      {/*  <Route exact path="/useMemo" component={useMemo} />*/}
+      {/*</HashRouter>*/}
+      <UseScroll />
     </div>
   )
 }
