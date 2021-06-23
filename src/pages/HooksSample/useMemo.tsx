@@ -13,6 +13,13 @@ function App() {
     }, 100)
   }, [])
 
+  useEffect(() => {
+    console.log('refresh refresh')
+    return () => {
+      console.log('children unmount')
+    }
+  }, [])
+
   const listData: any[] = useMemo(() => {
     if (list?.length > 0) {
       // const regExp = new RegExp(search, 'g')

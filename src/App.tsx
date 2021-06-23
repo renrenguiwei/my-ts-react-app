@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route, HashRouter } from 'react-router-dom'
 
 // component
 // import StorgePage from '@/pages/Storage'
@@ -8,9 +9,9 @@ import React from 'react'
 // import HooksSample2 from '@/pages/HooksSample/index2'
 // import Counter from '@/pages/HooksSample/useCallback'
 // import Counter2 from '@/pages/HooksSample/useCallback2'
-// import Counter3 from '@/pages/HooksSample/useCallback3'
-// import Counter4 from '@/pages/HooksSample/useMemo'
-import UseRef from '@/pages/HooksSample/useRef'
+import useCallback3 from '@/pages/HooksSample/useCallback3'
+import useMemo from '@/pages/HooksSample/useMemo'
+// import UseRef from '@/pages/HooksSample/useRef'
 // import UseContext from '@/pages/HooksSample/useContext'
 
 // styles
@@ -34,9 +35,12 @@ function App() {
       {/*<Counter />*/}
       {/*<Counter2 />*/}
       {/*<Counter3 />*/}
-      {/*<Counter4 />*/}
-      <UseRef />
+      {/*<UseRef />*/}
       {/*<UseContext />*/}
+      <HashRouter>
+        <Route exact path="/" component={useCallback3} />
+        <Route exact path="/useMemo" component={useMemo} />
+      </HashRouter>
     </div>
   )
 }

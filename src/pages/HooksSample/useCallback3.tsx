@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 interface ChildrenProps {
   val: string
@@ -6,6 +7,7 @@ interface ChildrenProps {
 }
 
 function App() {
+  let history = useHistory()
   const [val1, setVal1] = useState('')
   const [val2, setVal2] = useState('')
 
@@ -17,10 +19,17 @@ function App() {
     setVal2(e.target.value)
   }, [])
 
+  useEffect(() => {
+    return () => {
+      console.log('parent unMount')
+    }
+  }, [])
+
   return (
     <>
       <Child val={val1} onChange={onChange1} />
       <Child val={val2} onChange={onChange2} />
+      <button onClick={() => history.push('/useMemo')}>跳转路由</button>
     </>
   )
 }
