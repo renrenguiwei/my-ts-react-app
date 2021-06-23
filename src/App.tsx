@@ -14,7 +14,8 @@ import useMemo from '@/pages/HooksSample/useMemo'
 // import UseRef from '@/pages/HooksSample/useRef'
 // import UseContext from '@/pages/HooksSample/useContext'
 // import UseScroll from '@/pages/HooksDiy/useScroll'
-import CountingStars from '@/pages/HooksDiy/useCounter'
+// import CountingStars from '@/pages/HooksDiy/useCounter'
+import UserList from '@/pages/HooksDiy/useAsync'
 
 // styles
 import '@/asset/styles.less'
@@ -43,7 +44,7 @@ function App() {
       {/*  <Route exact path="/" component={useCallback3} />*/}
       {/*  <Route exact path="/useMemo" component={useMemo} />*/}
       {/*</HashRouter>*/}
-      <CountingStars />
+      <UserList />
     </div>
   )
 }
