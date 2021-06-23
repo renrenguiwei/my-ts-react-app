@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+import { useSingleton } from '@/pages/HooksDiy/useSingleton'
 
 interface ChildrenProps {
   val: string
@@ -11,6 +12,10 @@ function App() {
   const [val1, setVal1] = useState('')
   const [val2, setVal2] = useState('')
 
+  useSingleton(() => {
+    console.log('只会被执行一次哦哦哦')
+  })
+
   const onChange1 = useCallback((e: any) => {
     setVal1(e.target.value)
   }, [])
@@ -20,10 +25,11 @@ function App() {
   }, [])
 
   useEffect(() => {
+    console.log('parent mount')
     return () => {
       console.log('parent unMount')
     }
-  }, [])
+  }, [val1])
 
   return (
     <>
@@ -36,7 +42,7 @@ function App() {
 
 const Child = React.memo(function (props: ChildrenProps) {
   const { val, onChange } = props
-  console.log('childern render')
+  // console.log('childern render')
   return <input value={val} onChange={onChange} />
 })
 
