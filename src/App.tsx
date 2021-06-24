@@ -16,6 +16,7 @@ import useMemo from '@/pages/HooksSample/useMemo'
 // import UseScroll from '@/pages/HooksDiy/useScroll'
 // import CountingStars from '@/pages/HooksDiy/useCounter'
 import UserList from '@/pages/HooksDiy/useAsync'
+import CounterRedux from '@/pages/Redux/counter'
 
 // styles
 import '@/asset/styles.less'
@@ -25,6 +26,7 @@ import '@/asset/styles.less'
 
 function App() {
   // const size = useWindowSize()
+  // counterRedux()
   return (
     <div className="App" style={{ height: '10000px' }}>
       {/*<StorgePage />*/}
@@ -45,6 +47,7 @@ function App() {
       {/*  <Route exact path="/useMemo" component={useMemo} />*/}
       {/*</HashRouter>*/}
       <UserList />
+      <CounterRedux />
     </div>
   )
 }
