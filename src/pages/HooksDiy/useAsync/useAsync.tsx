@@ -10,7 +10,8 @@ const useAsync = (asyncFunction: any) => {
     setLoading(true)
     setData([])
     setError(null)
-    return asyncFunction()
+    asyncFunction()
+    // return asyncFunction()
       .then((response: any) => {
         // 请求成功时，将数据写进 state，设置 loading 为 false
         setData(response)

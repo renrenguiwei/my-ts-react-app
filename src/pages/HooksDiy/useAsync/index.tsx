@@ -10,7 +10,13 @@ export default function UserList() {
   })
 
   useEffect(() => {
-    fetchUsers().then()
+    fetchUsers()
+    /**
+     * 此处用不用then完全取决于内部return Promise
+     * 1. 不是内页越多return越高级，内层return不return完全
+     *    取决于外层对内层数据、动作操作的细腻度
+     */
+    // fetchUsers().then()
   }, [])
 
   let res: any = null
@@ -22,7 +28,7 @@ export default function UserList() {
     res = users.map((item, key) => {
       return (
         <div key={key}>
-          <span>{item?.['order_no']}</span>
+          <span style={{ color: '#fff' }}>{item?.['order_no']}</span>
         </div>
       )
     })
