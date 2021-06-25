@@ -1,17 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 // component
 import UserList from '@/pages/HooksDiy/useAsync'
-import CounterRedux from '@/pages/Redux/counter'
+import { PriceInput } from '@/pages/DeepThink/PriceInput'
 
 // styles
 import '@/asset/styles.less'
 
+const initData = { amount: 0, currency: 'rmb' }
+
 function App() {
+  const [value, setValue] = useState(initData)
+
   return (
     <div className="App" style={{ height: '10000px' }}>
       <UserList />
-      <CounterRedux />
+      <PriceInput
+        value={value}
+        onChangeCb={(e) => {
+          console.log(e)
+          setValue(e)
+        }}
+      />
     </div>
   )
 }
