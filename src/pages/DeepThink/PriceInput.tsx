@@ -14,7 +14,7 @@ export const PriceInput = (props: PriceInputType) => {
   const { value, onChangeCb } = props
 
   const handleChange = useCallback(
-    (newValue) => {
+    (newValue: any) => {
       onChangeCb({
         ...value,
         ...newValue
