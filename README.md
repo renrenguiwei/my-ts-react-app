@@ -54,3 +54,4 @@ yarn add @babel/plugin-proposal-decorators
 1. [Kotlin vs Flutter：谁将成为跨平台开发市场的最终统治者？](https://cloud.tencent.com/developer/news/586019)
 1. [Kotlin Multiplatform Mobile 现已推出 Alpha 版本](https://blog.jetbrains.com/zh-hans/kotlin/2020/09/kotlin-multiplatform-mobile-alpha/)
 1. [精读《设计模式 - Mediator 中介者模式》](https://zhuanlan.zhihu.com/p/348438972)
+1. [简单了解：什么是无服务器？](https://www.redhat.com/zh/topics/cloud-native-apps/what-is-serverless)
