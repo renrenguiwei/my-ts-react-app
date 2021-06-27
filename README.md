@@ -48,3 +48,6 @@ yarn add @babel/plugin-proposal-decorators
 1. [useRef与let变量在多实例中对比，let变量局限](https://codesandbox.io/s/zhijieshiyongchangliangtidai-useref-dejuxianxing-kyptw?file=/src/App.tsx)
 1. [react-router-cache-route对路由状态的保存](https://github.com/CJY0208/react-router-cache-route)
 1. [JavaScript 编译 - JIT (just-in-time) compiler 是怎么工作的？](https://zhuanlan.zhihu.com/p/99395691)
+1. [JS引擎概览](https://segmentfault.com/a/1190000039288517)
+1. [AOT vs JIT程序编译](https://blog.csdn.net/boardknight/article/details/103872554)
+1. [【深入解析】跨端框架的核心技术到底是什么？](https://supercodepower.com/cross-platform-tech#4react-native%EF%BC%9Ajs-engine--native-renderpipeline)
