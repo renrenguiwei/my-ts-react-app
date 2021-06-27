@@ -42,8 +42,7 @@ yarn add @babel/plugin-proposal-decorators
 - [x] 10.集成ant-design
 
 ### 好文思考
-1. [React Hooks 还不如类？
-   ](https://www.infoq.cn/article/ltgmCtDsuts31qM1W20D)
+1. [React Hooks 还不如类？](https://www.infoq.cn/article/ltgmCtDsuts31qM1W20D)
 1. [你不知道的 useCallback](https://segmentfault.com/a/1190000020108840)
 1. [useRef与let变量在多实例中对比，let变量局限](https://codesandbox.io/s/zhijieshiyongchangliangtidai-useref-dejuxianxing-kyptw?file=/src/App.tsx)
 1. [react-router-cache-route对路由状态的保存](https://github.com/CJY0208/react-router-cache-route)
@@ -51,3 +50,7 @@ yarn add @babel/plugin-proposal-decorators
 1. [JS引擎概览](https://segmentfault.com/a/1190000039288517)
 1. [AOT vs JIT程序编译](https://blog.csdn.net/boardknight/article/details/103872554)
 1. [【深入解析】跨端框架的核心技术到底是什么？](https://supercodepower.com/cross-platform-tech#4react-native%EF%BC%9Ajs-engine--native-renderpipeline)
+1. [跨平台桌面应用开发选择QT还是ELECTRON？](https://cocozq.com/?p=121)
+1. [Kotlin vs Flutter：谁将成为跨平台开发市场的最终统治者？](https://cloud.tencent.com/developer/news/586019)
+1. [Kotlin Multiplatform Mobile 现已推出 Alpha 版本](https://blog.jetbrains.com/zh-hans/kotlin/2020/09/kotlin-multiplatform-mobile-alpha/)
+1. [精读《设计模式 - Mediator 中介者模式》](https://zhuanlan.zhihu.com/p/348438972)
