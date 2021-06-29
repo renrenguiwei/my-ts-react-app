@@ -45,6 +45,7 @@ yarn add @babel/plugin-proposal-decorators
 1. [React Hooks 还不如类？](https://www.infoq.cn/article/ltgmCtDsuts31qM1W20D)
 1. [你不知道的 useCallback](https://segmentfault.com/a/1190000020108840)
 1. [useRef与let变量在多实例中对比，let变量局限](https://codesandbox.io/s/zhijieshiyongchangliangtidai-useref-dejuxianxing-kyptw?file=/src/App.tsx)
+1. [useImperativeHandle](https://www.jianshu.com/p/92def9e95af5)
 1. [react-router-cache-route对路由状态的保存](https://github.com/CJY0208/react-router-cache-route)
 1. [JavaScript 编译 - JIT (just-in-time) compiler 是怎么工作的？](https://zhuanlan.zhihu.com/p/99395691)
 1. [JS引擎概览](https://segmentfault.com/a/1190000039288517)
