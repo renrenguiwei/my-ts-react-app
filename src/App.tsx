@@ -1,31 +1,28 @@
-import React from 'react'
-import { Provider } from 'mobx-react'
-// import stores from '@/pages/Mobx/store'
-import stores from '@/pages/Mobx/store'
+import React, { useState, useEffect } from 'react'
 
 // component
-import StorgePage from '@/pages/Storage'
-import ReactNotUpdate from '@/pages/ReactNotUpdate'
-import Mobx1 from '@/pages/Mobx/index1'
+import UserList from '@/pages/HooksDiy/useAsync'
+import { PriceInput } from '@/pages/DeepThink/PriceInput'
 
 // styles
 import '@/asset/styles.less'
 
-// asset
-import Leimu from '@/asset/imgs/leimu.jpg'
+const initData = { amount: 0, currency: 'rmb' }
 
 function App() {
+  const [value, setValue] = useState(initData)
+
   return (
-    <Provider {...stores}>
-      <div className="App">
-        <StorgePage />
-        <ReactNotUpdate />
-        <div className="girlsIcon" style={{ backgroundImage: `url(${Leimu})` }}>
-          123
-        </div>
-        <Mobx1 />
-      </div>
-    </Provider>
+    <div className="App" style={{ height: '10000px' }}>
+      <UserList />
+      <PriceInput
+        value={value}
+        onChangeCb={(e) => {
+          console.log(e)
+          setValue(e)
+        }}
+      />
+    </div>
   )
 }
 
