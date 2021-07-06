@@ -13,7 +13,7 @@ class Index1Store {
 
 let name: keyof Index1Store
 name = 'setValue'
-console.log('name', name)
+// console.log('name', name)
 
 // export default new TestStore()
 export default new Index1Store()
