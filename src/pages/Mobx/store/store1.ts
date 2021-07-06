@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeObservable, makeAutoObservable, action, observable } from 'mobx'
 
-class Timer {
+class Store {
   public secondPassed: number = 0
   constructor() {
     makeObservable(this, {
@@ -19,4 +19,4 @@ class Timer {
   }
 }
 
-export default new Timer()
+export default new Store()
