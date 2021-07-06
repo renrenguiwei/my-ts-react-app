@@ -5,9 +5,9 @@ import React, { useEffect } from 'react'
 import { observer } from 'mobx-react'
 import { Store2 } from './store'
 
-let a: number = 1
 const Example2 = () => {
   useEffect(() => {
+    Store2.value = 10
     setInterval(() => {
       Store2.increment()
     }, 1000)
