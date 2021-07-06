@@ -1,10 +1,14 @@
 import React from 'react'
-import { makeAutoObservable } from 'mobx'
+import { makeObservable, makeAutoObservable, action, observable } from 'mobx'
 
 class Timer {
   public secondPassed: number = 0
   constructor() {
-    makeAutoObservable(this)
+    makeObservable(this, {
+      secondPassed: observable,
+      increase: action,
+      reset: action
+    })
   }
   increase() {
     this.secondPassed += 1
