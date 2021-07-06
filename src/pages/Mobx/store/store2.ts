@@ -10,6 +10,7 @@ function Store2() {
     },
     increment() {
       this.value++
+      this.value++
     },
     reset() {
       this.value = 0
@@ -65,7 +66,7 @@ function Store2New2() {
   )
 }
 
-export default Store2New2()
+export default Store2()
 
 /**
  * export default Store2

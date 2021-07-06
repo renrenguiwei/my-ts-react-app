@@ -8,9 +8,11 @@ import { Store2 } from './store'
 const Example2 = () => {
   useEffect(() => {
     Store2.value = 10
-    setInterval(() => {
-      Store2.increment()
-    }, 1000)
+    // setInterval(() => {
+    //   Store2.increment()
+    // }, 1000)
+    // 此处默认autoBind: true，将action绑定到实例，始终设置为this
+    setInterval(Store2.increment, 1000)
   }, [])
 
   return (
