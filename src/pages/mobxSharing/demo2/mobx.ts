@@ -12,11 +12,11 @@ export class EventEmitter {
   }
   emit(event: any, ...args: any) {
     console.log('events, emit', this.list)
-    const fns = this.list[event]
+    const funcs = this.list[event]
     // 判断大于0，依次执行
-    if (fns?.length > 0) {
-      fns.forEach((fn: any) => {
-        fn && fn(...args)
+    if (funcs?.length > 0) {
+      funcs.forEach((func: any) => {
+        func && func(...args)
       })
     }
   }
@@ -39,10 +39,20 @@ let obId = 0
  */
 
 // autorun
+// export const autorun = (fn: any) => {
+//   currentFn = fn
+//   fn()
+//   currentFn = null
+// }
 export const autorun = (fn: any) => {
-  currentFn = fn
-  fn()
-  currentFn = null
+  const wrapFn = () => {
+    // 关键点：每次执行set时，都会重新执行wrapFn，赋值给currentFn
+    // 收集其它依赖，这里不太好理解
+    currentFn = wrapFn
+    fn()
+    currentFn = null
+  }
+  wrapFn()
 }
 
 // observable
