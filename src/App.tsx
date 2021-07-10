@@ -1,17 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React  from 'react'
 
-// component
-import MobxExample1 from '@/pages/Mobx/example1'
-import MobxExample2 from '@/pages/Mobx/example2'
+import { observable, autorun } from '@/pages/mobxSharing/demo2/mobx'
 
 // styles
 import '@/asset/styles.less'
 
 function App() {
+  const store = observable({a: 1, b: {c: 1}})
+  autorun(() => {
+    console.log(store.b.c)
+  })
+
+  store.b.c = 5042
+
   return (
-    <div className="App">
-      <MobxExample2 />
-    </div>
+    <div className="App" />
   )
 }
 
