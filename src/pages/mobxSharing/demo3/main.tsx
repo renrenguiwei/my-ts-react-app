@@ -1,12 +1,12 @@
 import { autorun, observable } from './mobx'
 
 function Main() {
-  const store = observable({a: 1, b: 1})
+  const store = observable({a: 1, b: {c: 1}})
   autorun(() => {
-    console.log(store.b)
+    console.log(store.b.c)
   })
 
-  store.a = 2
+  store.b.c = 2
   return null
 }
 

@@ -1,20 +1,21 @@
 // 维护一个map存唯一键值
 const mapIds = new WeakMap()
 export class EventEmitter {
-  list: { [index: string]: any } = {}
-  on(event: any, fn: any) {
-    console.log('events, on', this.list, mapIds)
-    if (!this.list[event]) {
-      this.list[event] = []
-    }
-    if (!this.list[event].includes(fn)) {
-      this.list[event].push(fn)
-      console.log(this.list)
+  private list = new WeakMap()
+  on(obj: any, key: any, fn: any) {
+    console.log('events, on', this.list)
+    let targetObj = this.list.get(obj) || {}
+    let funcs = targetObj[key] || []
+    if (!funcs.includes(fn)) {
+      funcs.push(fn)
+      targetObj[key] = funcs
+      this.list.set(obj, targetObj)
     }
   }
-  emit(event: any, ...args: any) {
-    console.log('events, emit', this.list, mapIds)
-    const funcs = this.list[event]
+  emit(obj: any, key: any, ...args: any) {
+    console.log('events, emit', this.list)
+    let targetObj = this.list.get(obj) || {}
+    let funcs = targetObj[key] || []
     // 判断大于0，依次执行
     if (funcs?.length > 0) {
       funcs.forEach((func: any) => {
@@ -38,6 +39,8 @@ let obId = 0
  * 3. obId在定义时遍历变量递增，有自己的函数作用域；get、set是在对象读写操作时触发
  *
  * 4. store.b.c的this为递归observable(obj[key])的b，key为c
+ *
+ * 5. proxy代理，为何最后打印的对象会重复？
  */
 
 // autorun
@@ -65,14 +68,15 @@ export const observable = (obj: any): any => {
         return observable(target[key])
       }else {
         if (currentFn) {
-          if (!mapIds.get(target)) {
-            mapIds.set(target, {})
-          }
-          const mapObj = mapIds.get(target)
-          const id = String(++obId)
-          // 对象引用，并隐式赋值方式不太方便理解
-          mapObj[key] = id
-          em.on(id, currentFn)
+          // if (!mapIds.get(target)) {
+          //   mapIds.set(target, {})
+          // }
+          // const mapObj = mapIds.get(target)
+          // const id = String(++obId)
+          // // 对象引用，并隐式赋值方式不太方便理解
+          // mapObj[key] = id
+          // em.on(id, currentFn)
+          em.on(target, key, currentFn)
         }
         return target[key]
       }
@@ -80,10 +84,11 @@ export const observable = (obj: any): any => {
     set: (target,  key, val) => {
       if (target[key] !== val) {
         target[key] = val
-        const mapObj = mapIds.get(target)
-        if (mapObj && mapObj[key]) {
-          em.emit(mapObj[key])
-        }
+        // const mapObj = mapIds.get(target)
+        // if (mapObj && mapObj[key]) {
+        //   em.emit(mapObj[key])
+        // }
+        em.emit(target, key)
       }
       return true
     },
