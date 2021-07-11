@@ -1,7 +1,9 @@
+// 维护一个map存唯一键值
+const mapIds = new WeakMap()
 export class EventEmitter {
   list: { [index: string]: any } = {}
   on(event: any, fn: any) {
-    console.log('events, on', this.list)
+    console.log('events, on', this.list, mapIds)
     if (!this.list[event]) {
       this.list[event] = []
     }
@@ -11,7 +13,7 @@ export class EventEmitter {
     }
   }
   emit(event: any, ...args: any) {
-    console.log('events, emit', this.list)
+    console.log('events, emit', this.list, mapIds)
     const funcs = this.list[event]
     // 判断大于0，依次执行
     if (funcs?.length > 0) {
@@ -25,9 +27,6 @@ export class EventEmitter {
 const em = new EventEmitter()
 let currentFn: any
 let obId = 0
-
-// 维护一个map存唯一键值
-const mapIds = new WeakMap()
 
 /**
  * 疑问点：
@@ -59,34 +58,36 @@ export const autorun = (fn: any) => {
 }
 
 // observable
-export const observable = (obj: any) => {
-  // Symbol类型目的：不让自定义key干扰原key
-  const data = Symbol('data')
-  // 复制原值，用于计算处理
-  obj[data] = JSON.parse(JSON.stringify(obj))
-  Object.keys(obj).forEach(key => {
-    if (typeof obj[key] === 'object') {
-      observable(obj[key])
-    }else {
-      // 生成Event唯一channel ID
-      const id = String(++obId)
-      Object.defineProperty(obj, key, {
-        get: function() {
-          if (currentFn) {
-            em.on(id, currentFn)
+export const observable = (obj: any): any => {
+  return new Proxy(obj, {
+    get: (target, key) => {
+      if (typeof target[key] === 'object') {
+        return observable(target[key])
+      }else {
+        if (currentFn) {
+          if (!mapIds.get(target)) {
+            mapIds.set(target, {})
           }
-          return obj[data][key]
-        },
-        set: function(val) {
-          if (obj[data][key] !== val) {
-            obj[data][key] = val
-            em.emit(id)
-          }
-        },
-      })
-    }
+          const mapObj = mapIds.get(target)
+          const id = String(++obId)
+          // 对象引用，并隐式赋值方式不太方便理解
+          mapObj[key] = id
+          em.on(id, currentFn)
+        }
+        return target[key]
+      }
+    },
+    set: (target,  key, val) => {
+      if (target[key] !== val) {
+        target[key] = val
+        const mapObj = mapIds.get(target)
+        if (mapObj && mapObj[key]) {
+          em.emit(mapObj[key])
+        }
+      }
+      return true
+    },
   })
-  return obj
 }
 
 
