@@ -1,18 +1,42 @@
+// export class EventEmitter {
+//   list: { [index: string]: any } = {}
+//   on(event: any, fn: any) {
+//     console.log('events, on', this.list)
+//     if (!this.list[event]) {
+//       this.list[event] = []
+//     }
+//     if (!this.list[event].includes(fn)) {
+//       this.list[event].push(fn)
+//       console.log(this.list)
+//     }
+//   }
+//   emit(event: any, ...args: any) {
+//     console.log('events, emit', this.list)
+//     const funcs = this.list[event]
+//     // 判断大于0，依次执行
+//     if (funcs?.length > 0) {
+//       funcs.forEach((func: any) => {
+//         func && func(...args)
+//       })
+//     }
+//   }
+// }
 export class EventEmitter {
-  list: { [index: string]: any } = {}
-  on(event: any, fn: any) {
+  private list = new WeakMap()
+  on(obj: any, key: any, fn: any) {
     console.log('events, on', this.list)
-    if (!this.list[event]) {
-      this.list[event] = []
-    }
-    if (!this.list[event].includes(fn)) {
-      this.list[event].push(fn)
-      console.log(this.list)
+    let targetObj = this.list.get(obj) || {}
+    let funcs = targetObj[key] || []
+    if (!funcs.includes(fn)) {
+      funcs.push(fn)
+      targetObj[key] = funcs
+      this.list.set(obj, targetObj)
     }
   }
-  emit(event: any, ...args: any) {
+  emit(obj: any, key: any, ...args: any) {
     console.log('events, emit', this.list)
-    const funcs = this.list[event]
+    let targetObj = this.list.get(obj) || {}
+    let funcs = targetObj[key] || []
     // 判断大于0，依次执行
     if (funcs?.length > 0) {
       funcs.forEach((func: any) => {
@@ -66,18 +90,18 @@ export const observable = (obj: any) => {
       observable(obj[key])
     }else {
       // 生成Event唯一channel ID
-      const id = String(++obId)
+      // const id = String(++obId)
       Object.defineProperty(obj, key, {
         get: function() {
           if (currentFn) {
-            em.on(id, currentFn)
+            em.on(obj, key, currentFn)
           }
           return obj[data][key]
         },
         set: function(val) {
           if (obj[data][key] !== val) {
             obj[data][key] = val
-            em.emit(id)
+            em.emit(obj, key)
           }
         },
       })

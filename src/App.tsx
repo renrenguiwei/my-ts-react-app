@@ -1,5 +1,5 @@
 import React  from 'react'
-import Demo2 from '@/pages/mobxSharing/demo3/main'
+import Demo2 from '@/pages/mobxSharing/demo2/main'
 
 // styles
 import '@/asset/styles.less'
