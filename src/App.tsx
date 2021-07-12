@@ -1,11 +1,16 @@
 import React  from 'react'
-import Demo1 from '@/pages/demo06'
+import { configure } from 'mobx'
+import Feature01 from '@/pages/feature01'
 
 // styles
 import '@/asset/styles.less'
 
+configure({
+  enforceActions: 'observed'
+})
+
 function App() {
-  return <Demo1 />
+  return <Feature01 />
 }
 
 export default App
