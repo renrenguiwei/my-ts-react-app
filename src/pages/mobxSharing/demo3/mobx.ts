@@ -29,20 +29,6 @@ const em = new EventEmitter()
 let currentFn: any
 let obId = 0
 
-/**
- * 疑问点：
- * 1. currentFn首页auto自执行时才会有，不用currentFn做判断，EventEmitter也会根据id做判断
- *    解读：但set时会触发autorun走get，此时不需要注册事件，所以要用currentFn做过滤
- *
- * 2. 用Symbol复制原值,为了get输出不因为直接return obj.a造成死循环，但直接深拷贝也是可以做到的，symbol更高级点
- *
- * 3. obId在定义时遍历变量递增，有自己的函数作用域；get、set是在对象读写操作时触发
- *
- * 4. store.b.c的this为递归observable(obj[key])的b，key为c
- *
- * 5. proxy代理，为何最后打印的对象会重复？
- */
-
 // autorun
 // export const autorun = (fn: any) => {
 //   currentFn = fn
@@ -94,6 +80,20 @@ export const observable = (obj: any): any => {
     },
   })
 }
+
+/**
+ * 疑问点：
+ * 1. currentFn首页auto自执行时才会有，不用currentFn做判断，EventEmitter也会根据id做判断
+ *    解读：但set时会触发autorun走get，此时不需要注册事件，所以要用currentFn做过滤
+ *
+ * 2. 用Symbol复制原值,为了get输出不因为直接return obj.a造成死循环，但直接深拷贝也是可以做到的，symbol更高级点
+ *
+ * 3. obId在定义时遍历变量递增，有自己的函数作用域；get、set是在对象读写操作时触发
+ *
+ * 4. store.b.c的this为递归observable(obj[key])的b，key为c
+ *
+ * 5. proxy代理，为何最后打印的对象会重复？
+ */
 
 
 
