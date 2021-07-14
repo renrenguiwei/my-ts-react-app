@@ -13,6 +13,7 @@ import './style.less'
 const TodoLit = observer(() => {
 
   useEffect(() => {
+    // 注意点：generator与async await都可用于取值
     // fStore2.fetchData()
     fStore2.fetchDataAsync().then()
   }, [])
