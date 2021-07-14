@@ -1,6 +1,6 @@
 import React  from 'react'
 import { configure } from 'mobx'
-import Feature01 from '@/pages/feature01'
+import Feature01 from '@/pages/feature02'
 
 // styles
 import '@/asset/styles.less'

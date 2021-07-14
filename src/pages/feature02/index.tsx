@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import { action } from 'mobx'
 import { observer } from 'mobx-react'
 import { fStore2 } from '@/store'
@@ -9,6 +11,12 @@ import './style.less'
  * 1. makeObservable与makeAutoObservable自动推断代码量对比
  */
 const TodoLit = observer(() => {
+
+  useEffect(() => {
+    // fStore2.fetchData()
+    fStore2.fetchDataAsync().then()
+  }, [])
+
   return (
     <div className="contain">
       <div className="head">TodoList({fStore2.totalNumber})</div>
