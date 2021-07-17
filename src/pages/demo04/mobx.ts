@@ -26,9 +26,12 @@ const observable = (obj: any): any => {
             map.set(target, {});
           }
           const mapObj = map.get(target);
-          const id = String(obId++);
-          mapObj[propKey] = id;
-          em.on(id, currentFn);
+          // 添加event值判断，有的情况不会变化id，保持list永远只有一个事件对
+          if (!mapObj[propKey]) {
+            const id = String(obId++);
+            mapObj[propKey] = id;
+            em.on(id, currentFn);
+          }
         }
         return target[propKey];
       }

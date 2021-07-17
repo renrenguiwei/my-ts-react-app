@@ -9,6 +9,7 @@ export default class EventEmitter {
     if (!target.includes(fn)) {
       target.push(fn);
     }
+    console.log('eventList', Object.keys(this.list))
   };
   emit(event: any, ...args: any) {
     const fns = this.list[event];
