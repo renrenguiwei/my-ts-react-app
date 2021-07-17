@@ -11,6 +11,17 @@ const autorun = (fn: any) => {
     currentFn = null;
   }
   warpFn();
+  /**
+   * 突破点
+   * 1. autorun执行，但会受到store.a === 2的拦截
+   * 2. set方法时，每次都会on 订阅
+   *
+   * 所以将整个fun塞到this.list内部，那么就会有currentFn存在
+   */
+
+  // currentFn = fn;
+  // fn();
+  // currentFn = null;
 };
 
 const observable = (obj: any) => {

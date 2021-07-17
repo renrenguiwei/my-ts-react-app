@@ -32,6 +32,7 @@ const observable = (obj: any) => {
           // 值不变时不触发
           if (obj[data][key] !== v) {
             obj[data][key] = v;
+            // obj[key] = v; // 被劫持的对象，如果直接赋值会造成死循环
             em.emit(id);
           }
         }
