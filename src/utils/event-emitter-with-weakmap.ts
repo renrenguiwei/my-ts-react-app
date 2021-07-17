@@ -14,6 +14,7 @@ export default class EventEmitter {
     if (!target.includes(fn)) {
       target.push(fn);
     }
+    console.log('event list', this.list)
   };
   emit(obj: any, event: any, ...args: any) {
     const targetObj = this.list.get(obj);
