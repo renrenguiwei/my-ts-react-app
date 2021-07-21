@@ -1,4 +1,4 @@
-import { observable, action, computed, makeObservable } from "mobx";
+import { observable, action, computed, makeObservable, makeAutoObservable } from "mobx";
 
 class feature1Store {
   constructor() {
@@ -7,7 +7,7 @@ class feature1Store {
   @observable val: string = ''
   @observable todoList: Array<any> = []
 
-  @action
+  // @action
   addTodo (value: string) {
     this.todoList.push(value)
   }
