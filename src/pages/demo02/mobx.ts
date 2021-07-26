@@ -5,12 +5,9 @@ let currentFn: any;
 let obId = 1;
 
 const autorun = (fn: any) => {
-  const wrapFn = () => {
-    currentFn = wrapFn;
-    fn();
-    currentFn = null;
-  }
-  wrapFn()
+  currentFn = fn;
+  fn();
+  currentFn = null;
 };
 
 const observable = (obj: any) => {
