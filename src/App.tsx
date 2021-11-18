@@ -6,11 +6,13 @@ import MobxExample2 from '@/pages/Mobx/example2'
 
 // styles
 import '@/asset/styles.less'
+import { LodashTest } from "@/pages/LodashTest/lodashTest";
 
 function App() {
   return (
     <div className="App">
-      <MobxExample2 />
+      {/*<MobxExample2 />*/}
+      <LodashTest />
     </div>
   )
 }
