@@ -6,12 +6,12 @@ import MobxExample2 from '@/pages/Mobx/example2'
 
 // styles
 import '@/asset/styles.less'
-import { ZipImg } from "@/pages/ZipImg";
+import DatePicker from "@/pages/DatePicker";
 
 function App() {
   return (
     <div className="App">
-      <ZipImg />
+      <DatePicker />
     </div>
   )
 }
