@@ -1,7 +1,15 @@
 import * as React from "react";
-import { makeObservable, observable } from "mobx";
 import { observer } from "mobx-react";
 import Calendar from "@/pages/DatePicker/calendar";
+import { mockDataRules } from "@/pages/DatePicker/calendar/mockData";
+import {
+  IDisabledDate,
+  IEnableDate,
+  IHolidayTypeEnum,
+  INow,
+  IWeekday
+} from "@/pages/DatePicker/calendar/interface/ICalendar";
+import { assignCalendarDate } from "@/pages/DatePicker/calendar/utils/dateUtils";
 
 type Props = {}
 type State = {}
@@ -9,15 +17,28 @@ type State = {}
 @observer
 export default class App extends React.Component<Props, State> {
 
-  public visible: boolean = true
+  public rules: {
+    disabledDate?: IDisabledDate;
+    enableDate?: IEnableDate;
+  } = {}
+
+
   constructor(props: any) {
     super(props);
-    makeObservable(this, {
-      visible: observable
-    })
+    this.initData()
+  }
+
+  private initData() {
+    this.rules = assignCalendarDate(mockDataRules)
   }
 
   render() {
-    return <Calendar />
+    const { disabledDate, enableDate } = this.rules
+    return (
+      <Calendar
+        disabledDate={disabledDate}
+        enableDate={enableDate}
+      />
+    )
   }
 }
