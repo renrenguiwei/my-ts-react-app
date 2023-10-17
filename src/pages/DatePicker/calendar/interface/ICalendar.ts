@@ -60,9 +60,8 @@ export interface IEnableDate {
 }
 
 // 组件入参
-export interface IExtendCalendarProp {
+export type IExtendCalendarProp = {
   showPickerTime?: boolean // 时间维度
-  defaultValue?: Date
   disabledDate?: IDisabledDate
   enableDate?: IEnableDate
 }

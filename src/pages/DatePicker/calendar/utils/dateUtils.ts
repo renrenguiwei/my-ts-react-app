@@ -57,10 +57,6 @@ export const shouldDisableDate = (date: Date, disabledDate?: IDisabledDate, enab
   return status
 }
 
-export const onChange = (val: any) => {
-
-}
-
 // 对日历数据进行整理
 export const assignCalendarDate = (data: ICalendarApi): {
   disabledDate?: IDisabledDate
