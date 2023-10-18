@@ -33,6 +33,7 @@ export default class App extends React.Component<Props, State> {
     const { disabledDate, enableDate } = this.rules
     return (
       <Calendar
+        showHead={true}
         disabledDate={disabledDate}
         enableDate={enableDate}
         timestamp={1697590800000}

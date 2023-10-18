@@ -11,7 +11,7 @@ import classNames from 'classnames'
 import { mergeProps } from './utils/with-default-props'
 import { ArrowLeft } from './asserts/svg/arrow-left'
 import { ArrowLeftDouble } from './asserts/svg/arrow-left-double'
-import { useConfig } from './config-provider'
+import { useConfig } from './utils/config-provider'
 import isoWeek from 'dayjs/plugin/isoWeek'
 import { useUpdateEffect } from 'ahooks'
 import { usePropsValue } from './utils/use-props-value'
@@ -21,7 +21,7 @@ import {
   convertPageToDayjs,
   DateRange,
   Page,
-} from './convert'
+} from './utils/convert'
 
 dayjs.extend(isoWeek)
 

@@ -9,7 +9,7 @@ import { Header } from "./components/Header"
 
 import "./calendar.less"
 
-type MergedType = CalendarProps & IExtendCalendarProp
+type MergedType = IExtendCalendarProp & CalendarProps
 
 type State = {
   date: Date,
@@ -29,6 +29,7 @@ export default class Calendar extends React.Component<MergedType, State> {
 
   render() {
     const {
+      showHead = false,
       showPickerTime = true,
       selectionMode = 'single',
       disabledDate,
@@ -38,9 +39,7 @@ export default class Calendar extends React.Component<MergedType, State> {
 
     return (
       <div className="calendar-container">
-
-        <Header title="日期选择" handleClose={() => null}/>
-
+        { showHead ? <Header title="日期选择" handleClose={() => null}/> : null }
         <BaseCalendar
           {...otherProps as any}
           selectionMode={selectionMode}

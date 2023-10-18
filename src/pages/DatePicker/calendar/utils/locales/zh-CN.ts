@@ -1,4 +1,4 @@
-import { mergeLocale } from '../utils/merge-locale'
+import { mergeLocale } from '../merge-locale'
 import { base } from './base'
 
 const typeTemplate = '${label}不是一个有效的${type}'
