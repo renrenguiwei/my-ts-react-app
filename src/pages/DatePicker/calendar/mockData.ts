@@ -1,5 +1,3 @@
-import { ICalendarApi } from "@/pages/DatePicker/calendar/interface/ICalendarApi";
-
 export const mockDataRules: any = {
   "generalRules":{
     "calendarSchemeTenantId":2455667442975220,

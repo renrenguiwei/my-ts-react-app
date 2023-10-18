@@ -4,10 +4,7 @@ import Calendar from "@/pages/DatePicker/calendar";
 import { mockDataRules } from "@/pages/DatePicker/calendar/mockData";
 import {
   IDisabledDate,
-  IEnableDate,
-  IHolidayTypeEnum,
-  INow,
-  IWeekday
+  IEnableDate
 } from "@/pages/DatePicker/calendar/interface/ICalendar";
 import { assignCalendarDate } from "@/pages/DatePicker/calendar/utils/dateUtils";
 
