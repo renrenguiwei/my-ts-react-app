@@ -64,6 +64,8 @@ export type IExtendCalendarProp = {
   showPickerTime?: boolean // 时间维度
   disabledDate?: IDisabledDate
   enableDate?: IEnableDate
+  timestamp?: number    // 1697590800000时间戳
+  handleConfirm?: (val: number) => void
 }
 
 

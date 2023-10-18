@@ -36,10 +36,12 @@ export default class App extends React.Component<Props, State> {
     const { disabledDate, enableDate } = this.rules
     return (
       <Calendar
-        selectionMode={'single'}
         disabledDate={disabledDate}
         enableDate={enableDate}
-        defaultValue={new Date(1673936955000)}
+        timestamp={1697590800000}
+        handleConfirm={(val) => {
+          console.log(new Date(val))
+        }}
       />
     )
   }
